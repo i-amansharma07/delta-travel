@@ -23,25 +23,27 @@
 
       <ul class="hidden md:flex gap-8 items-center text-gray-700">
         <li>
-          <a href="#home" class="hover:text-blue-600 transition">Home</a>
+          <a href="/" class="hover:text-blue-600 transition">Home</a>
         </li>
         <li>
-          <a href="#about" class="hover:text-blue-600 transition">About Us</a>
+          <a href="/about-us" class="hover:text-blue-600 transition">About Us</a>
         </li>
         <li class="relative group">
           <a href="#services" class="hover:text-blue-600 transition">Services ▼</a>
-          <div class="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-lg py-2 hidden group-hover:block">
-            <a href="#flights" class="block px-4 py-2 hover:bg-blue-100">Flight Booking</a>
-            <a href="#hotels" class="block px-4 py-2 hover:bg-blue-100">Hotel Booking</a>
-            <a href="#cruises" class="block px-4 py-2 hover:bg-blue-100">Cruise Packages</a>
-            <a href="#cancellation" class="block px-4 py-2 hover:bg-blue-100">Cancellation Support</a>
+          <!-- Invisible hover bridge to prevent dropdown from closing -->
+          <div class="absolute left-0 top-full w-48 h-2"></div>
+          <div class="absolute left-0 top-full mt-2 w-48 bg-white shadow-lg rounded-lg py-2 hidden group-hover:block">
+            <a href="/flight-booking" class="block px-4 py-2 hover:bg-blue-100">Flight Booking</a>
+            <a href="/hotel-booking" class="block px-4 py-2 hover:bg-blue-100">Hotel Booking</a>
+            <a href="/cruise-booking" class="block px-4 py-2 hover:bg-blue-100">Cruise Packages</a>
+            <a href="/customer-support" class="block px-4 py-2 hover:bg-blue-100">Cancellation Support</a>
           </div>
         </li>
         <li>
-          <a href="#blog" class="hover:text-blue-600 transition">Blog</a>
+          <a href="/blog" class="hover:text-blue-600 transition">Blog</a>
         </li>
         <li>
-          <a href="#contact" class="hover:text-blue-600 transition">Contact Us</a>
+          <a href="/contact-us" class="hover:text-blue-600 transition">Contact Us</a>
         </li>
       </ul>
 

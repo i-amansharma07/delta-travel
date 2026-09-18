@@ -15,3 +15,15 @@ Booking submission error: SyntaxError: Unexpected end of JSON input
     at handlePages (/home/aman-sharma/Desktop/delta-1/node_modules/astro/dist/core/pages/handler.js:18:24)
     at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
 {"message":"[500] POST /api/submit-booking 10ms","label":null,"level":"info"}
+{"message":"[200] / 9ms","label":null,"level":"info"}
+{"message":"[200] / 8ms","label":null,"level":"info"}
+{"message":"[200] / 6ms","label":null,"level":"info"}
+{"message":"[200] / 5ms","label":null,"level":"info"}
+{"message":"[200] / 5ms","label":null,"level":"info"}
+{"message":"[404] /about-us 5ms","label":null,"level":"info"}
+{"message":"[404] /blog 2ms","label":null,"level":"info"}
+{"message":"[200] / 10ms","label":null,"level":"info"}
+{"message":"[404] /flight-booking 1ms","label":null,"level":"info"}
+{"message":"[200] / 6ms","label":null,"level":"info"}
+{"message":"[404] /flight-booking 1ms","label":null,"level":"info"}
+{"message":"[404] /flight-booking 1ms","label":null,"level":"info"}
