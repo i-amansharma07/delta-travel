@@ -97,9 +97,6 @@
           </div>
         </li>
         <li>
-          <a href="/blog" class="hover:text-accent-600 transition font-medium">Blog</a>
-        </li>
-        <li>
           <a href="/contact-us" class="hover:text-accent-600 transition font-medium">Contact Us</a>
         </li>
       </ul>
@@ -109,12 +106,73 @@
       </a>
 
       <!-- Mobile menu button -->
-      <button class="md:hidden p-2 text-slate-600 hover:text-slate-900">
+      <button id="mobile-menu-btn" class="md:hidden p-2 text-slate-600 hover:text-slate-900">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
         </svg>
       </button>
     </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-200">
+      <ul class="flex flex-col gap-0 px-4 py-4 text-slate-600">
+        <li>
+          <a href="/" class="block py-3 hover:text-accent-600 transition font-medium">Home</a>
+        </li>
+        <li>
+          <a href="/about-us" class="block py-3 hover:text-accent-600 transition font-medium">About Us</a>
+        </li>
+        <li>
+          <button id="services-toggle" class="w-full text-left py-3 hover:text-accent-600 transition font-medium flex items-center justify-between">
+            Services <span id="services-arrow" class="text-xs">▼</span>
+          </button>
+          <div id="services-menu" class="hidden bg-slate-50 flex flex-col gap-0 pl-4">
+            <a href="/flight-booking" class="py-3 hover:text-accent-600 transition">✈️ Flight Booking</a>
+            <a href="/hotel-booking" class="py-3 hover:text-accent-600 transition">🏨 Hotel Booking</a>
+            <a href="/cruise-booking" class="py-3 hover:text-accent-600 transition">🚢 Cruise Packages</a>
+            <a href="/customer-support" class="py-3 hover:text-accent-600 transition">💬 Support Services</a>
+          </div>
+        </li>
+        <li>
+          <a href="/contact-us" class="block py-3 hover:text-accent-600 transition font-medium">Contact Us</a>
+        </li>
+        <li class="border-t border-slate-200 pt-3 mt-3">
+          <a href="tel:+18555465052" class="block bg-accent-600 text-white px-4 py-3 rounded-lg hover:bg-accent-700 transition font-medium text-center">
+            Get Quote
+          </a>
+        </li>
+      </ul>
+    </div>
   </nav>
 </header>
+
+<script>
+  // Mobile menu toggle
+  const menuBtn = document.getElementById('mobile-menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const servicesToggle = document.getElementById('services-toggle');
+  const servicesMenu = document.getElementById('services-menu');
+  const servicesArrow = document.getElementById('services-arrow');
+
+  // Toggle main menu
+  menuBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+  });
+
+  // Toggle services submenu
+  servicesToggle.addEventListener('click', () => {
+    servicesMenu.classList.toggle('hidden');
+    servicesArrow.textContent = servicesMenu.classList.contains('hidden') ? '▼' : '▲';
+  });
+
+  // Close menu when a link is clicked
+  const links = mobileMenu.querySelectorAll('a');
+  links.forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.add('hidden');
+      servicesMenu.classList.add('hidden');
+      servicesArrow.textContent = '▼';
+    });
+  });
+</script>
 
