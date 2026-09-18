@@ -1,152 +1,259 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import BookingForm from '../components/BookingForm.astro';
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import BookingForm from "../components/BookingForm.astro";
 ---
 
-<Layout title="Cruise Packages - Delta Air Travel">
-  <Header />
+<Layout title="Luxury Cruise Packages - Book Your Dream Vacation - Delta Air Travel">
+    <Header />
 
-  <main>
-    <!-- Hero Section -->
-    <section class="bg-gradient-to-r from-blue-900 to-blue-800 text-white py-16 px-4">
-      <div class="max-w-7xl mx-auto text-center">
-        <h1 class="text-4xl md:text-5xl font-bold mb-4">Luxury Cruise Packages</h1>
-        <p class="text-xl text-blue-100">Get up to 25% discount on amazing cruise vacations</p>
-      </div>
-    </section>
+    <main>
+        <!-- Hero Section -->
+        <section class="relative bg-slate-900 text-white overflow-hidden">
+            <div class="absolute inset-0 opacity-30">
+                <img
+                    src="/images/cruise-ship.jpg"
+                    alt="Luxury cruise ship"
+                    class="w-full h-full object-cover"
+                />
+            </div>
+            <div class="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/80 to-slate-900/40"></div>
 
-    <!-- Service Card -->
-    <section class="py-8 px-4 bg-white">
-      <div class="max-w-7xl mx-auto">
-        <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-lg p-6 shadow-md mb-8">
-          <div class="flex justify-between items-start">
-            <div>
-              <h2 class="text-2xl font-bold text-blue-900">Cruise Packages</h2>
-              <p class="text-gray-700 mt-2">Experience unforgettable cruise vacations with exclusive packages to Caribbean, Mediterranean, and beyond.</p>
+            <div class="relative z-10 max-w-container mx-auto px-4 py-section-lg text-center">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4 text-white">
+                    Luxury Cruise Vacations
+                </h1>
+                <p class="text-xl text-slate-200 mb-4">
+                    Get up to 25% discount on premium cruise packages
+                </p>
+                <div class="inline-block bg-accent-500/10 border border-accent-500/30 rounded-lg px-4 py-2">
+                    <span class="text-accent-400 font-semibold">
+                        ✓ All-inclusive packages available
+                    </span>
+                </div>
             </div>
-            <span class="bg-blue-600 text-white px-4 py-2 rounded-full font-semibold">Save 25%</span>
-          </div>
-        </div>
-      </div>
-    </section>
+        </section>
 
-    <!-- Booking Form -->
-    <section class="py-12 px-4 bg-gray-50">
-      <div class="max-w-7xl mx-auto">
-        <BookingForm serviceType="cruise" />
-      </div>
-    </section>
+        <!-- Main Booking Form -->
+        <section class="py-section-lg px-4 bg-white">
+            <BookingForm serviceType="cruise" />
+        </section>
 
-    <!-- Benefits Section -->
-    <section class="py-12 px-4 bg-white">
-      <div class="max-w-7xl mx-auto">
-        <h2 class="text-3xl font-bold text-blue-900 mb-8 text-center">Why Cruise With Us?</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div class="bg-blue-50 p-6 rounded-lg">
-            <div class="text-3xl mb-3">🚢</div>
-            <h3 class="text-xl font-bold text-blue-900 mb-2">Exclusive Deals</h3>
-            <p class="text-gray-700">Access special cruise packages and promotions not available elsewhere.</p>
-          </div>
-          <div class="bg-blue-50 p-6 rounded-lg">
-            <div class="text-3xl mb-3">🌍</div>
-            <h3 class="text-xl font-bold text-blue-900 mb-2">World-Class Lines</h3>
-            <p class="text-gray-700">Partner with major cruise lines including Royal Caribbean, Carnival, Disney, and more.</p>
-          </div>
-          <div class="bg-blue-50 p-6 rounded-lg">
-            <div class="text-3xl mb-3">✓</div>
-            <h3 class="text-xl font-bold text-blue-900 mb-2">Flexibility</h3>
-            <p class="text-gray-700">Flexible payment options and cancellation policies for peace of mind.</p>
-          </div>
-        </div>
-      </div>
-    </section>
+        <!-- Popular Destinations -->
+        <section class="py-section-lg px-4 bg-slate-50">
+            <div class="max-w-container mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-12 text-center">
+                    Popular Cruise Destinations
+                </h2>
 
-    <!-- Popular Destinations -->
-    <section class="py-12 px-4 bg-gray-50">
-      <div class="max-w-4xl mx-auto">
-        <h2 class="text-3xl font-bold text-blue-900 mb-8 text-center">Popular Cruise Destinations</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div class="bg-white p-6 rounded-lg shadow-md">
-            <h3 class="text-xl font-bold text-blue-900 mb-2">🏝️ Caribbean</h3>
-            <p class="text-gray-700">Tropical paradise with beautiful beaches and crystal-clear waters.</p>
-          </div>
-          <div class="bg-white p-6 rounded-lg shadow-md">
-            <h3 class="text-xl font-bold text-blue-900 mb-2">🏛️ Mediterranean</h3>
-            <p class="text-gray-700">Explore historic cities, ancient ruins, and stunning coastal scenery.</p>
-          </div>
-          <div class="bg-white p-6 rounded-lg shadow-md">
-            <h3 class="text-xl font-bold text-blue-900 mb-2">❄️ Alaska</h3>
-            <p class="text-gray-700">Witness glaciers, wildlife, and pristine nature in the Last Frontier.</p>
-          </div>
-          <div class="bg-white p-6 rounded-lg shadow-md">
-            <h3 class="text-xl font-bold text-blue-900 mb-2">🌅 European Rivers</h3>
-            <p class="text-gray-700">Journey through charming European cities along scenic rivers.</p>
-          </div>
-          <div class="bg-white p-6 rounded-lg shadow-md">
-            <h3 class="text-xl font-bold text-blue-900 mb-2">🏝️ South Pacific</h3>
-            <p class="text-gray-700">Experience island-hopping and tropical island escapes.</p>
-          </div>
-          <div class="bg-white p-6 rounded-lg shadow-md">
-            <h3 class="text-xl font-bold text-blue-900 mb-2">🌎 World Cruises</h3>
-            <p class="text-gray-700">Epic multi-month voyages visiting multiple continents.</p>
-          </div>
-        </div>
-      </div>
-    </section>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="bg-white border border-slate-200 rounded-xl overflow-hidden hover:shadow-md transition cursor-pointer">
+                        <div class="h-40 bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center text-3xl">
+                            🏝️
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-lg font-bold text-slate-900 mb-2">
+                                Caribbean
+                            </h3>
+                            <p class="text-slate-600 text-sm mb-3">
+                                Tropical islands and pristine beaches
+                            </p>
+                            <p class="text-accent-600 font-semibold">
+                                7-day cruise from $899
+                            </p>
+                        </div>
+                    </div>
 
-    <!-- Cruise Amenities -->
-    <section class="py-12 px-4 bg-white">
-      <div class="max-w-4xl mx-auto">
-        <h2 class="text-3xl font-bold text-blue-900 mb-8 text-center">What's Included</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div class="flex items-start">
-            <span class="text-2xl mr-4">✓</span>
-            <div>
-              <h3 class="font-bold text-blue-900 mb-1">Accommodation</h3>
-              <p class="text-gray-700">Comfortable cabin with modern amenities</p>
-            </div>
-          </div>
-          <div class="flex items-start">
-            <span class="text-2xl mr-4">✓</span>
-            <div>
-              <h3 class="font-bold text-blue-900 mb-1">Meals</h3>
-              <p class="text-gray-700">Multiple dining options and unlimited food</p>
-            </div>
-          </div>
-          <div class="flex items-start">
-            <span class="text-2xl mr-4">✓</span>
-            <div>
-              <h3 class="font-bold text-blue-900 mb-1">Entertainment</h3>
-              <p class="text-gray-700">Shows, activities, and nightly entertainment</p>
-            </div>
-          </div>
-          <div class="flex items-start">
-            <span class="text-2xl mr-4">✓</span>
-            <div>
-              <h3 class="font-bold text-blue-900 mb-1">Excursions</h3>
-              <p class="text-gray-700">Shore excursions at each port</p>
-            </div>
-          </div>
-          <div class="flex items-start">
-            <span class="text-2xl mr-4">✓</span>
-            <div>
-              <h3 class="font-bold text-blue-900 mb-1">Fitness</h3>
-              <p class="text-gray-700">Gym, pools, and spa facilities</p>
-            </div>
-          </div>
-          <div class="flex items-start">
-            <span class="text-2xl mr-4">✓</span>
-            <div>
-              <h3 class="font-bold text-blue-900 mb-1">Service</h3>
-              <p class="text-gray-700">World-class service and hospitality</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
+                    <div class="bg-white border border-slate-200 rounded-xl overflow-hidden hover:shadow-md transition cursor-pointer">
+                        <div class="h-40 bg-gradient-to-br from-purple-500 to-purple-600 flex items-center justify-center text-3xl">
+                            🏛️
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-lg font-bold text-slate-900 mb-2">
+                                Mediterranean
+                            </h3>
+                            <p class="text-slate-600 text-sm mb-3">
+                                Historic cities and coastal charm
+                            </p>
+                            <p class="text-accent-600 font-semibold">
+                                10-day cruise from $1,199
+                            </p>
+                        </div>
+                    </div>
 
-  <Footer />
+                    <div class="bg-white border border-slate-200 rounded-xl overflow-hidden hover:shadow-md transition cursor-pointer">
+                        <div class="h-40 bg-gradient-to-br from-cyan-500 to-cyan-600 flex items-center justify-center text-3xl">
+                            ❄️
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-lg font-bold text-slate-900 mb-2">
+                                Alaska
+                            </h3>
+                            <p class="text-slate-600 text-sm mb-3">
+                                Glaciers and wildlife adventures
+                            </p>
+                            <p class="text-accent-600 font-semibold">
+                                7-day cruise from $1,299
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white border border-slate-200 rounded-xl overflow-hidden hover:shadow-md transition cursor-pointer">
+                        <div class="h-40 bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center text-3xl">
+                            🌴
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-lg font-bold text-slate-900 mb-2">
+                                Hawaii
+                            </h3>
+                            <p class="text-slate-600 text-sm mb-3">
+                                Island hopping and water activities
+                            </p>
+                            <p class="text-accent-600 font-semibold">
+                                7-day cruise from $999
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white border border-slate-200 rounded-xl overflow-hidden hover:shadow-md transition cursor-pointer">
+                        <div class="h-40 bg-gradient-to-br from-green-500 to-green-600 flex items-center justify-center text-3xl">
+                            🦜
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-lg font-bold text-slate-900 mb-2">
+                                Amazon
+                            </h3>
+                            <p class="text-slate-600 text-sm mb-3">
+                                Wildlife and jungle exploration
+                            </p>
+                            <p class="text-accent-600 font-semibold">
+                                5-day cruise from $799
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white border border-slate-200 rounded-xl overflow-hidden hover:shadow-md transition cursor-pointer">
+                        <div class="h-40 bg-gradient-to-br from-indigo-500 to-indigo-600 flex items-center justify-center text-3xl">
+                            🚢
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-lg font-bold text-slate-900 mb-2">
+                                Far East
+                            </h3>
+                            <p class="text-slate-600 text-sm mb-3">
+                                Asia and Pacific exploration
+                            </p>
+                            <p class="text-accent-600 font-semibold">
+                                14-day cruise from $1,899
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- What's Included -->
+        <section class="py-section-lg px-4 bg-white">
+            <div class="max-w-container mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-12 text-center">
+                    What's Included in Our Packages
+                </h2>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="flex gap-4">
+                        <div class="text-3xl flex-shrink-0">🛏️</div>
+                        <div>
+                            <h3 class="font-bold text-slate-900 mb-1">
+                                Luxury Accommodations
+                            </h3>
+                            <p class="text-slate-600 text-sm">
+                                Premium cabins with ocean views
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-4">
+                        <div class="text-3xl flex-shrink-0">🍽️</div>
+                        <div>
+                            <h3 class="font-bold text-slate-900 mb-1">
+                                All-Inclusive Dining
+                            </h3>
+                            <p class="text-slate-600 text-sm">
+                                Gourmet meals and fine dining
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-4">
+                        <div class="text-3xl flex-shrink-0">🎭</div>
+                        <div>
+                            <h3 class="font-bold text-slate-900 mb-1">
+                                Entertainment
+                            </h3>
+                            <p class="text-slate-600 text-sm">
+                                Shows, concerts, and activities
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-4">
+                        <div class="text-3xl flex-shrink-0">💆</div>
+                        <div>
+                            <h3 class="font-bold text-slate-900 mb-1">
+                                Spa & Wellness
+                            </h3>
+                            <p class="text-slate-600 text-sm">
+                                Relaxation and fitness facilities
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-4">
+                        <div class="text-3xl flex-shrink-0">🏖️</div>
+                        <div>
+                            <h3 class="font-bold text-slate-900 mb-1">
+                                Excursions
+                            </h3>
+                            <p class="text-slate-600 text-sm">
+                                Shore activities at each port
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-4">
+                        <div class="text-3xl flex-shrink-0">🎫</div>
+                        <div>
+                            <h3 class="font-bold text-slate-900 mb-1">
+                                Travel Insurance
+                            </h3>
+                            <p class="text-slate-600 text-sm">
+                                Comprehensive coverage included
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="py-section-lg px-4 bg-slate-900 text-white">
+            <div class="max-w-container mx-auto text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                    Ready to Cruise?
+                </h2>
+                <p class="text-lg text-slate-200 mb-8">
+                    Save up to 25% on luxury cruise packages
+                </p>
+                <a
+                    href="#cruise-form"
+                    class="inline-block bg-accent-600 hover:bg-accent-700 text-white font-semibold px-8 py-3 rounded-lg transition"
+                >
+                    Book Your Cruise
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <Footer />
 </Layout>

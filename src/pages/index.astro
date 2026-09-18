@@ -1,92 +1,309 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import Hero from '../components/Hero.astro';
-import ServiceCard from '../components/ServiceCard.astro';
-import BookingForm from '../components/BookingForm.astro';
-import ServiceFeatures from '../components/ServiceFeatures.astro';
-import Testimonials from '../components/Testimonials.astro';
-import { services } from '../data/services';
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import Hero from "../components/Hero.astro";
+import BookingForm from "../components/BookingForm.astro";
+import ServiceFeatures from "../components/ServiceFeatures.astro";
+import Testimonials from "../components/Testimonials.astro";
 ---
 
 <Layout title="Delta Air Travel - Book Flights, Hotels & Cruises">
-  <Header />
+    <Header />
 
-  <main>
-    {/* Hero Section */}
-    <Hero />
+    <main>
+        {/* Hero Section */}
+        <Hero />
 
-    {/* Flight Booking Section */}
-    <section id="flights" class="py-12 px-4 bg-white">
-      <div class="max-w-7xl mx-auto">
-        <div class="mb-8">
-          <ServiceCard
-            id="flight"
-            title="Flight Booking"
-            discount="20%"
-            description="Get Up to 20% Off on Flight Booking"
-            phoneNumber="+18555465052"
-          />
-        </div>
-        <BookingForm serviceType="flight" />
-      </div>
-    </section>
+        {/* Flight Booking Section */}
+        <section id="flights" class="py-section-lg px-4 bg-white">
+            <BookingForm serviceType="flight" />
+        </section>
 
-    {/* Hotel Booking Section */}
-    <section id="hotels" class="py-12 px-4 bg-gray-50">
-      <div class="max-w-7xl mx-auto">
-        <div class="mb-8">
-          <ServiceCard
-            id="hotel"
-            title="Hotel Booking"
-            discount="15%"
-            description="Get Up to 15% Off on Hotel Booking"
-            phoneNumber="+18555465052"
-          />
-        </div>
-        <BookingForm serviceType="hotel" />
-      </div>
-    </section>
+        {/* Trust & Credibility Section */}
+        <section class="py-section-lg px-4 bg-slate-50">
+            <div class="max-w-container mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+                        Why Travelers Choose Us
+                    </h2>
+                    <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+                        Delta Air Travel has been the trusted partner for
+                        thousands of travelers since 2009.
+                    </p>
+                </div>
 
-    {/* Cruise Booking Section */}
-    <section id="cruises" class="py-12 px-4 bg-white">
-      <div class="max-w-7xl mx-auto">
-        <div class="mb-8">
-          <ServiceCard
-            id="cruise"
-            title="Cruise Packages"
-            discount="25%"
-            description="Get Up to 25% Off on Cruise Packages"
-            phoneNumber="+18555465052"
-          />
-        </div>
-        <BookingForm serviceType="cruise" />
-      </div>
-    </section>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-white border border-slate-200 rounded-xl p-8 hover:shadow-md transition">
+                        <div class="text-4xl mb-4">🏆</div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">
+                            15+ Years Trusted
+                        </h3>
+                        <p class="text-slate-600">
+                            Serving travelers worldwide with integrity and
+                            excellence since 2009.
+                        </p>
+                    </div>
 
-    {/* Cancellation Support Section */}
-    <section id="cancellation" class="py-12 px-4 bg-gray-50">
-      <div class="max-w-7xl mx-auto">
-        <div class="mb-8">
-          <ServiceCard
-            id="cancellation"
-            title="Cancellation Support"
-            discount="Support"
-            description="Flight & Hotel Cancellation Support"
-            phoneNumber="+18555465052"
-          />
-        </div>
-        <BookingForm serviceType="cancellation" />
-      </div>
-    </section>
+                    <div class="bg-white border border-slate-200 rounded-xl p-8 hover:shadow-md transition">
+                        <div class="text-4xl mb-4">🔒</div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">
+                            100% Secure
+                        </h3>
+                        <p class="text-slate-600">
+                            SSL encrypted transactions and IATA-protected
+                            bookings for your peace of mind.
+                        </p>
+                    </div>
 
-    {/* Service Features Section */}
-    <ServiceFeatures />
+                    <div class="bg-white border border-slate-200 rounded-xl p-8 hover:shadow-md transition">
+                        <div class="text-4xl mb-4">⭐</div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">
+                            50K+ Happy Travelers
+                        </h3>
+                        <p class="text-slate-600">
+                            Join thousands of satisfied customers who have
+                            booked with us.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    {/* Testimonials Section */}
-    <Testimonials />
-  </main>
+        {/* Hotel Booking Section */}
+        <section id="hotels" class="py-section-lg px-4 bg-white">
+            <BookingForm serviceType="hotel" />
+        </section>
 
-  <Footer />
+        {/* Service Comparison */}
+        <section class="py-section-lg px-4 bg-slate-50">
+            <div class="max-w-container mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+                        Our Complete Travel Solutions
+                    </h2>
+                    <p class="text-lg text-slate-600">
+                        Everything you need for your perfect journey
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-white rounded-xl overflow-hidden border border-slate-200 hover:shadow-lg transition">
+                        <div class="h-40 bg-gradient-to-br from-slate-900 to-slate-800 flex items-center justify-center text-5xl">
+                            ✈️
+                        </div>
+                        <div class="p-8">
+                            <h3 class="text-2xl font-bold text-slate-900 mb-3">
+                                Flight Booking
+                            </h3>
+                            <p class="text-slate-600 mb-4">
+                                Access millions of flights worldwide with
+                                guaranteed lowest prices and flexible booking
+                                options.
+                            </p>
+                            <ul class="space-y-2 text-sm text-slate-700 mb-6">
+                                <li>✓ International & domestic flights</li>
+                                <li>✓ Best price guarantee</li>
+                                <li>✓ Free cancellations up to 24hrs</li>
+                            </ul>
+                            <a
+                                href="/flight-booking"
+                                class="inline-block bg-accent-600 text-white px-6 py-2 rounded-lg hover:bg-accent-700 transition font-medium text-sm"
+                            >
+                                Book Flights
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-xl overflow-hidden border border-slate-200 hover:shadow-lg transition">
+                        <div class="h-40 bg-gradient-to-br from-accent-600 to-accent-700 flex items-center justify-center text-5xl">
+                            🏨
+                        </div>
+                        <div class="p-8">
+                            <h3 class="text-2xl font-bold text-slate-900 mb-3">
+                                Hotel Booking
+                            </h3>
+                            <p class="text-slate-600 mb-4">
+                                Find premium accommodations worldwide, from
+                                luxury resorts to budget-friendly stays.
+                            </p>
+                            <ul class="space-y-2 text-sm text-slate-700 mb-6">
+                                <li>✓ 50K+ verified properties</li>
+                                <li>✓ Exclusive deals & discounts</li>
+                                <li>✓ Free cancellations on most bookings</li>
+                            </ul>
+                            <a
+                                href="/hotel-booking"
+                                class="inline-block bg-accent-600 text-white px-6 py-2 rounded-lg hover:bg-accent-700 transition font-medium text-sm"
+                            >
+                                Book Hotels
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-xl overflow-hidden border border-slate-200 hover:shadow-lg transition">
+                        <div class="h-40 bg-gradient-to-br from-slate-700 to-slate-600 flex items-center justify-center text-5xl">
+                            🚢
+                        </div>
+                        <div class="p-8">
+                            <h3 class="text-2xl font-bold text-slate-900 mb-3">
+                                Cruise Packages
+                            </h3>
+                            <p class="text-slate-600 mb-4">
+                                Luxury cruise vacations to the world's most
+                                exotic destinations at unbeatable prices.
+                            </p>
+                            <ul class="space-y-2 text-sm text-slate-700 mb-6">
+                                <li>✓ Caribbean, Mediterranean & more</li>
+                                <li>✓ All-inclusive packages available</li>
+                                <li>✓ Up to 25% savings on group bookings</li>
+                            </ul>
+                            <a
+                                href="/cruise-booking"
+                                class="inline-block bg-accent-600 text-white px-6 py-2 rounded-lg hover:bg-accent-700 transition font-medium text-sm"
+                            >
+                                Book Cruises
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-xl overflow-hidden border border-slate-200 hover:shadow-lg transition">
+                        <div class="h-40 bg-gradient-to-br from-accent-500 to-accent-400 flex items-center justify-center text-5xl">
+                            💬
+                        </div>
+                        <div class="p-8">
+                            <h3 class="text-2xl font-bold text-slate-900 mb-3">
+                                Support Services
+                            </h3>
+                            <p class="text-slate-600 mb-4">
+                                Professional assistance with cancellations,
+                                changes, and travel emergencies 24/7.
+                            </p>
+                            <ul class="space-y-2 text-sm text-slate-700 mb-6">
+                                <li>✓ 24/7 customer support</li>
+                                <li>✓ Expert cancellation assistance</li>
+                                <li>✓ Instant rebooking options</li>
+                            </ul>
+                            <a
+                                href="/customer-support"
+                                class="inline-block bg-accent-600 text-white px-6 py-2 rounded-lg hover:bg-accent-700 transition font-medium text-sm"
+                            >
+                                Get Support
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        {/* Cruise Booking Section */}
+        <section id="cruises" class="py-section-lg px-4 bg-white">
+            <BookingForm serviceType="cruise" />
+        </section>
+
+        {/* How It Works */}
+        <section class="py-section-lg px-4 bg-slate-50">
+            <div class="max-w-container mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+                        Booking Made Simple
+                    </h2>
+                    <p class="text-lg text-slate-600">
+                        Get your best travel deal in just 4 easy steps
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                    <div class="text-center">
+                        <div class="inline-flex items-center justify-center w-16 h-16 bg-accent-600 text-white rounded-full font-bold text-xl mb-4">
+                            1
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 mb-2">
+                            Fill Your Details
+                        </h3>
+                        <p class="text-slate-600 text-sm">
+                            Enter your travel dates, locations, and passenger
+                            count
+                        </p>
+                    </div>
+
+                    <div class="text-center">
+                        <div class="inline-flex items-center justify-center w-16 h-16 bg-accent-600 text-white rounded-full font-bold text-xl mb-4">
+                            2
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 mb-2">
+                            Get Best Quote
+                        </h3>
+                        <p class="text-slate-600 text-sm">
+                            We search and compare prices from top providers
+                        </p>
+                    </div>
+
+                    <div class="text-center">
+                        <div class="inline-flex items-center justify-center w-16 h-16 bg-accent-600 text-white rounded-full font-bold text-xl mb-4">
+                            3
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 mb-2">
+                            Confirm Booking
+                        </h3>
+                        <p class="text-slate-600 text-sm">
+                            Review details and complete your secure booking
+                        </p>
+                    </div>
+
+                    <div class="text-center">
+                        <div class="inline-flex items-center justify-center w-16 h-16 bg-accent-600 text-white rounded-full font-bold text-xl mb-4">
+                            4
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 mb-2">
+                            Travel & Enjoy
+                        </h3>
+                        <p class="text-slate-600 text-sm">
+                            Receive confirmation and travel with peace of mind
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        {/* Cancellation Support Section */}
+        <section id="cancellation" class="py-section-lg px-4 bg-white">
+            <BookingForm serviceType="cancellation" />
+        </section>
+
+        {/* Service Features Section */}
+        <ServiceFeatures />
+
+        {/* Testimonials Section */}
+        <Testimonials />
+
+        {/* CTA Section */}
+        <section class="py-section-lg px-4 bg-slate-900 text-white">
+            <div class="max-w-container mx-auto text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white">
+                    Ready to Book Your Perfect Journey?
+                </h2>
+                <p class="text-lg text-slate-200 mb-8 max-w-2xl mx-auto">
+                    Join thousands of travelers who trust Delta Air Travel for
+                    their booking needs.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a
+                        href="#flight-form"
+                        class="inline-block bg-accent-600 hover:bg-accent-700 text-white font-semibold px-8 py-3 rounded-lg transition-colors"
+                    >
+                        Get Your Quote Now
+                    </a>
+                    <a
+                        href="tel:+18555465052"
+                        class="inline-block bg-white/10 hover:bg-white/20 text-white font-semibold px-8 py-3 rounded-lg transition-colors border border-white/20"
+                    >
+                        Call Us: +1 (855) 546-5052
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <Footer />
 </Layout>

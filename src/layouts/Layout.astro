@@ -4,9 +4,18 @@ import '../styles/global.css';
 interface Props {
   title?: string;
   description?: string;
+  image?: string;
+  url?: string;
 }
 
-const { title = 'Delta Air Travel', description = 'Your trusted travel partner' } = Astro.props;
+const {
+  title = 'Delta Air Travel - Book Flights, Hotels & Cruises',
+  description = 'Book flights, hotels, and cruises at the best prices. 15+ years trusted by 50K+ travelers. 24/7 support, secure booking, and flexible cancellations.',
+  image = 'https://deltaairtravel.com/og-image.png',
+  url = 'https://deltaairtravel.com'
+} = Astro.props;
+
+const currentUrl = url + Astro.url.pathname;
 ---
 
 <!DOCTYPE html>
@@ -14,10 +23,128 @@ const { title = 'Delta Air Travel', description = 'Your trusted travel partner' 
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Primary Meta Tags -->
+    <meta name="title" content={title} />
     <meta name="description" content={description} />
+    <meta name="keywords" content="flights, hotels, cruises, travel booking, vacation packages, best prices" />
+    <meta name="author" content="Delta Air Travel" />
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="English" />
+    <meta name="revisit-after" content="7 days" />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href={currentUrl} />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={currentUrl} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={image} />
+    <meta property="og:site_name" content="Delta Air Travel" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={currentUrl} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={image} />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+    <link rel="icon" type="image/png" sizes="64x64" href="/favicon-64.png" />
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96.png" />
+    <link rel="icon" type="image/png" sizes="128x128" href="/favicon-128.png" />
+    <link rel="icon" type="image/png" sizes="144x144" href="/favicon-144.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png" />
+    <link rel="icon" type="image/png" sizes="256x256" href="/favicon-256.png" />
+    <link rel="apple-touch-icon" href="/favicon-192.png" />
+    <meta name="theme-color" content="#1e3a8a" />
+    <meta name="msapplication-TileColor" content="#1e3a8a" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Sitemap & RSS -->
+    <link rel="sitemap" href="/sitemap.xml" />
+
+    <!-- Schema.org JSON-LD Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "TravelAgency",
+      "name": "Delta Air Travel",
+      "description": "Book flights, hotels, and cruises at the best prices with 24/7 support",
+      "url": "https://deltaairtravel.com",
+      "logo": "https://deltaairtravel.com/favicon-256.png",
+      "image": "https://deltaairtravel.com/og-image.png",
+      "telephone": "+1-855-546-5052",
+      "email": "support@deltaairtravel.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "US"
+      },
+      "sameAs": [
+        "https://www.facebook.com/deltaairtravel",
+        "https://twitter.com/deltaairtravel",
+        "https://www.instagram.com/deltaairtravel"
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "reviewCount": "1547",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "serviceArea": {
+        "@type": "Country",
+        "name": "Worldwide"
+      },
+      "knowsAbout": ["Flights", "Hotels", "Cruises", "Travel Packages"],
+      "priceRange": "$$$"
+    }
+    </script>
+
+    <!-- Organization Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Delta Air Travel",
+      "url": "https://deltaairtravel.com",
+      "logo": "https://deltaairtravel.com/favicon-256.png",
+      "description": "Your trusted travel partner for flights, hotels, and cruises since 2009",
+      "foundingDate": "2009",
+      "foundingLocation": "United States",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "Customer Service",
+        "telephone": "+1-855-546-5052",
+        "email": "support@deltaairtravel.com",
+        "availableLanguage": ["en"]
+      },
+      "sameAs": [
+        "https://www.facebook.com/deltaairtravel",
+        "https://twitter.com/deltaairtravel",
+        "https://www.instagram.com/deltaairtravel"
+      ]
+    }
+    </script>
+
     <title>{title}</title>
   </head>
-  <body class="bg-white text-gray-900">
+  <body class="bg-slate-50 text-slate-900">
     <slot />
   </body>
 </html>
+

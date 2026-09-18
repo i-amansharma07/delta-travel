@@ -1,55 +1,120 @@
 ---
 ---
 
-<header class="sticky top-0 z-50 bg-white shadow-md">
-  <!-- Top navigation bar -->
-  <div class="bg-blue-900 text-white px-4 py-2">
-    <div class="max-w-7xl mx-auto flex justify-between items-center text-sm">
-      <div class="flex gap-4">
-        <span>Welcome to Delta Air Travel</span>
+<header class="sticky top-0 z-50 bg-white border-b border-slate-200 shadow-xs">
+  <!-- Top info bar -->
+  <div class="bg-slate-900 text-white px-4 py-2.5">
+    <div class="max-w-container mx-auto flex justify-between items-center text-sm">
+      <div class="flex gap-6 text-slate-100">
+        <span class="hidden sm:inline">✓ 15+ Years of Trust</span>
+        <span class="hidden md:inline">✓ 24/7 Support Available</span>
       </div>
-      <a href="tel:+18555465052" class="hover:text-blue-200">
-        +1 (855) 546-5052
-      </a>
+      <div class="flex items-center gap-4">
+        <a href="tel:+18555465052" class="font-medium hover:text-accent-500 transition">
+          📞 +1 (855) 546-5052
+        </a>
+        <!-- Social Icons -->
+        <div class="flex gap-2 pl-4 border-l border-slate-700">
+          <a
+            href="https://facebook.com/deltaairtravel"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Follow us on Facebook"
+            class="group w-7 h-7 rounded-full bg-slate-700 hover:from-blue-500 hover:to-blue-600 flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-md hover:shadow-blue-500/20"
+          >
+            <svg class="w-3.5 h-3.5 text-white" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+            </svg>
+          </a>
+          <a
+            href="https://x.com/deltaairtravel"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Follow us on X"
+            class="group w-7 h-7 rounded-full bg-slate-700 hover:bg-black flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-md hover:shadow-black/20"
+          >
+            <svg class="w-3.5 h-3.5 text-white" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24h-6.6l-5.165-6.75-5.904 6.75h-3.315l7.73-8.835L2.42 2.25h6.6l4.759 6.287L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+            </svg>
+          </a>
+          <a
+            href="https://instagram.com/deltaairtravel"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Follow us on Instagram"
+            class="group w-7 h-7 rounded-full bg-gradient-to-br from-slate-700 to-slate-800 hover:from-pink-500 hover:via-red-500 hover:to-yellow-500 flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-md hover:shadow-pink-500/20"
+          >
+            <svg class="w-3.5 h-3.5 text-white" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 0C5.372 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 2.25c5.385 0 9.75 4.365 9.75 9.75S17.385 21.75 12 21.75 2.25 17.385 2.25 12 6.615 2.25 12 2.25zm0 1.5c-4.557 0-8.25 3.693-8.25 8.25s3.693 8.25 8.25 8.25 8.25-3.693 8.25-8.25-3.693-8.25-8.25-8.25zm0 1.5c3.728 0 6.75 3.022 6.75 6.75s-3.022 6.75-6.75 6.75-6.75-3.022-6.75-6.75 3.022-6.75 6.75-6.75zm3.75-1.5a1.125 1.125 0 100 2.25 1.125 1.125 0 000-2.25z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
     </div>
   </div>
 
   <!-- Main navigation bar -->
   <nav class="bg-white px-4 py-4">
-    <div class="max-w-7xl mx-auto flex justify-between items-center">
-      <div class="text-2xl font-bold text-blue-900">
-        Delta Air Travel
+    <div class="max-w-container mx-auto flex justify-between items-center">
+      <div class="flex items-center gap-2">
+        <div class="text-2xl font-bold text-slate-900">✈️</div>
+        <div>
+          <div class="text-lg font-bold text-slate-900">Delta Air Travel</div>
+          <div class="text-xs text-slate-500">Your Trusted Travel Partner</div>
+        </div>
       </div>
 
-      <ul class="hidden md:flex gap-8 items-center text-gray-700">
+      <ul class="hidden md:flex gap-8 items-center text-slate-600">
         <li>
-          <a href="/" class="hover:text-blue-600 transition">Home</a>
+          <a href="/" class="hover:text-accent-600 transition font-medium">Home</a>
         </li>
         <li>
-          <a href="/about-us" class="hover:text-blue-600 transition">About Us</a>
+          <a href="/about-us" class="hover:text-accent-600 transition font-medium">About Us</a>
         </li>
         <li class="relative group">
-          <a href="#services" class="hover:text-blue-600 transition">Services ▼</a>
-          <!-- Invisible hover bridge to prevent dropdown from closing -->
+          <a href="#services" class="hover:text-accent-600 transition font-medium flex items-center gap-1">
+            Services <span class="text-xs">▼</span>
+          </a>
+          <!-- Invisible hover bridge -->
           <div class="absolute left-0 top-full w-48 h-2"></div>
-          <div class="absolute left-0 top-full mt-2 w-48 bg-white shadow-lg rounded-lg py-2 hidden group-hover:block">
-            <a href="/flight-booking" class="block px-4 py-2 hover:bg-blue-100">Flight Booking</a>
-            <a href="/hotel-booking" class="block px-4 py-2 hover:bg-blue-100">Hotel Booking</a>
-            <a href="/cruise-booking" class="block px-4 py-2 hover:bg-blue-100">Cruise Packages</a>
-            <a href="/customer-support" class="block px-4 py-2 hover:bg-blue-100">Cancellation Support</a>
+          <div class="absolute left-0 top-full mt-2 w-56 bg-white shadow-lg rounded-lg py-2 hidden group-hover:block border border-slate-200">
+            <a href="/flight-booking" class="block px-4 py-3 hover:bg-slate-50 text-slate-700 hover:text-accent-600 transition">
+              <div class="font-medium">✈️ Flight Booking</div>
+              <div class="text-xs text-slate-500">Book flights worldwide</div>
+            </a>
+            <a href="/hotel-booking" class="block px-4 py-3 hover:bg-slate-50 text-slate-700 hover:text-accent-600 transition">
+              <div class="font-medium">🏨 Hotel Booking</div>
+              <div class="text-xs text-slate-500">Premium accommodations</div>
+            </a>
+            <a href="/cruise-booking" class="block px-4 py-3 hover:bg-slate-50 text-slate-700 hover:text-accent-600 transition">
+              <div class="font-medium">🚢 Cruise Packages</div>
+              <div class="text-xs text-slate-500">Luxury cruise holidays</div>
+            </a>
+            <a href="/customer-support" class="block px-4 py-3 hover:bg-slate-50 text-slate-700 hover:text-accent-600 transition">
+              <div class="font-medium">💬 Support Services</div>
+              <div class="text-xs text-slate-500">24/7 cancellation help</div>
+            </a>
           </div>
         </li>
         <li>
-          <a href="/blog" class="hover:text-blue-600 transition">Blog</a>
+          <a href="/blog" class="hover:text-accent-600 transition font-medium">Blog</a>
         </li>
         <li>
-          <a href="/contact-us" class="hover:text-blue-600 transition">Contact Us</a>
+          <a href="/contact-us" class="hover:text-accent-600 transition font-medium">Contact Us</a>
         </li>
       </ul>
 
-      <a href="tel:+18555465052" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition font-medium">
-        +1 (855) 546-5052
+      <a href="tel:+18555465052" class="hidden md:inline-block bg-accent-600 text-white px-5 py-2 rounded-lg hover:bg-accent-700 transition font-medium text-sm">
+        Get Quote
       </a>
+
+      <!-- Mobile menu button -->
+      <button class="md:hidden p-2 text-slate-600 hover:text-slate-900">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
     </div>
   </nav>
 </header>
+

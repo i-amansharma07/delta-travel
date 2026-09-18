@@ -1,25 +1,212 @@
 ---
-import { services } from '../data/services';
 ---
 
-<section class="bg-gradient-to-r from-blue-900 to-blue-800 text-white py-16 px-4">
-  <div class="max-w-7xl mx-auto text-center mb-12">
-    <h1 class="text-4xl md:text-5xl font-bold mb-4">Your Trusted Travel Partner</h1>
-    <p class="text-xl text-blue-100">Book Flights, Hotels, and Cruises with Confidence</p>
-  </div>
+<style>
+    @keyframes slideFromRight {
+        from {
+            opacity: 0;
+            transform: translateX(100%);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
 
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-    {services.map((service) => (
-      <div class="bg-white/10 backdrop-blur-sm p-6 rounded-lg hover:bg-white/20 transition-all">
-        <h3 class="text-2xl font-bold mb-3">{service.title}</h3>
-        <p class="text-blue-100 mb-4">{service.description}</p>
-        <a
-          href={`tel:${service.phoneNumber}`}
-          class="inline-block bg-white text-blue-900 px-4 py-2 rounded-lg hover:bg-blue-100 transition-colors font-semibold"
-        >
-          {service.phoneNumber}
-        </a>
-      </div>
-    ))}
-  </div>
+    @keyframes slideToLeft {
+        from {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        to {
+            opacity: 0;
+            transform: translateX(-100%);
+        }
+    }
+
+    @keyframes slideUpFromBottom {
+        from {
+            opacity: 0;
+            transform: translateY(40px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .hero-carousel {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    .carousel-slide {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+    }
+
+    .carousel-slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .carousel-slide.active {
+        animation: slideFromRight 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    }
+
+    .carousel-slide.exiting {
+        animation: slideToLeft 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    }
+
+    /* Hero content animations from bottom */
+    .hero-badge {
+        animation: slideUpFromBottom 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.1s both;
+    }
+
+    .hero-title {
+        animation: slideUpFromBottom 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.2s both;
+    }
+
+    .hero-description {
+        animation: slideUpFromBottom 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.3s both;
+    }
+
+    .hero-trust-signals {
+        animation: slideUpFromBottom 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.4s both;
+    }
+
+    .hero-trust-signals > div {
+        animation: slideUpFromBottom 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    }
+
+    .hero-trust-signals > div:nth-child(1) {
+        animation-delay: 0.4s;
+    }
+
+    .hero-trust-signals > div:nth-child(2) {
+        animation-delay: 0.5s;
+    }
+
+    .hero-trust-signals > div:nth-child(3) {
+        animation-delay: 0.6s;
+    }
+
+    .hero-buttons {
+        animation: slideUpFromBottom 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.7s both;
+    }
+</style>
+
+<section class="relative bg-slate-600 text-white overflow-hidden">
+    <!-- Background carousel with overlay -->
+    <div class="absolute inset-0 opacity-60">
+        <div class="hero-carousel">
+            <div class="carousel-slide active" data-slide="0">
+                <img
+                    src="/images/airplane-flight.jpg"
+                    alt="Modern aircraft in flight"
+                />
+            </div>
+            <div class="carousel-slide" data-slide="1">
+                <img src="/images/cruise-ship.jpg" alt="Luxury cruise ship" />
+            </div>
+            <div class="carousel-slide" data-slide="2">
+                <img
+                    src="/images/hotel-luxury.jpg"
+                    alt="Beautiful hotel resort"
+                />
+            </div>
+        </div>
+    </div>
+
+    <!-- Dark overlay for text readability -->
+    <div class="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/85 to-slate-900/50"></div>
+
+    <!-- Content -->
+    <div class="relative z-10 max-w-container mx-auto px-4 py-section-xl">
+        <div class="max-w-2xl">
+            <div class="hero-badge inline-block bg-accent-500/10 border border-accent-500/30 rounded-lg px-3 py-1.5 mb-6">
+                <span class="text-accent-400 text-sm font-medium">
+                    ✈️ Trusted by thousands of travelers
+                </span>
+            </div>
+
+            <h1 class="hero-title text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight text-white">
+                Book Your Perfect Journey
+            </h1>
+
+            <p class="hero-description text-lg md:text-xl text-slate-200 mb-8 leading-relaxed max-w-lg">
+                Find the best flights, hotels, and cruise packages at unbeatable
+                prices. Our 24/7 support team is here to help you every step of
+                the way.
+            </p>
+
+            <!-- Trust signals -->
+            <div class="hero-trust-signals grid grid-cols-3 gap-4 mb-8 md:gap-6">
+                <div
+                    class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-4 transition-all duration-300 hover:bg-white/10 hover:border-accent-500/30 hover:shadow-lg"
+                >
+                    <div class="text-2xl font-bold text-accent-400">15+</div>
+                    <div class="text-sm text-slate-300">Years Trusted</div>
+                </div>
+                <div
+                    class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-4 transition-all duration-300 hover:bg-white/10 hover:border-accent-500/30 hover:shadow-lg"
+                >
+                    <div class="text-2xl font-bold text-accent-400">50K+</div>
+                    <div class="text-sm text-slate-300">Happy Travelers</div>
+                </div>
+                <div
+                    class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-4 transition-all duration-300 hover:bg-white/10 hover:border-accent-500/30 hover:shadow-lg"
+                >
+                    <div class="text-2xl font-bold text-accent-400">24/7</div>
+                    <div class="text-sm text-slate-300">Support Team</div>
+                </div>
+            </div>
+
+            <!-- CTA buttons -->
+            <div class="hero-buttons flex flex-col sm:flex-row gap-4">
+                <a
+                    href="#flight-form"
+                    class="inline-block bg-accent-600 hover:bg-accent-700 text-white font-semibold px-8 py-3 rounded-lg transition-all duration-300 text-center transform hover:-translate-y-1 hover:shadow-lg active:translate-y-0"
+                >
+                    Get Your Quote
+                </a>
+                <a
+                    href="/about-us"
+                    class="inline-block bg-white/10 hover:bg-white/20 text-white font-semibold px-8 py-3 rounded-lg transition-all duration-300 text-center border border-white/20 transform hover:-translate-y-1 hover:shadow-lg active:translate-y-0"
+                >
+                    Learn More
+                </a>
+            </div>
+        </div>
+    </div>
 </section>
+
+<script>
+    const slides = document.querySelectorAll(".carousel-slide");
+    let currentSlide = 0;
+
+    function nextSlide() {
+        const prevSlide = currentSlide;
+        currentSlide = (currentSlide + 1) % slides.length;
+
+        // Start the incoming slide animation immediately
+        slides[currentSlide].classList.add("active");
+
+        // Start the outgoing slide animation at the same time
+        slides[prevSlide].classList.add("exiting");
+
+        // After animation completes, clean up classes
+        setTimeout(() => {
+            slides[prevSlide].classList.remove("exiting");
+        }, 800);
+    }
+
+    // Auto-advance slides every 5 seconds
+    setInterval(nextSlide, 5000);
+</script>

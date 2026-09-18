@@ -1,93 +1,186 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import BookingForm from '../components/BookingForm.astro';
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import BookingForm from "../components/BookingForm.astro";
 ---
 
-<Layout title="Hotel Booking - Delta Air Travel">
-  <Header />
+<Layout title="Book Hotels Worldwide - Premium Accommodations - Delta Air Travel">
+    <Header />
 
-  <main>
-    <!-- Hero Section -->
-    <section class="bg-gradient-to-r from-blue-900 to-blue-800 text-white py-16 px-4">
-      <div class="max-w-7xl mx-auto text-center">
-        <h1 class="text-4xl md:text-5xl font-bold mb-4">Book Your Hotel</h1>
-        <p class="text-xl text-blue-100">Get up to 15% discount on hotel bookings worldwide</p>
-      </div>
-    </section>
-
-    <!-- Service Card -->
-    <section class="py-8 px-4 bg-white">
-      <div class="max-w-7xl mx-auto">
-        <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-lg p-6 shadow-md mb-8">
-          <div class="flex justify-between items-start">
-            <div>
-              <h2 class="text-2xl font-bold text-blue-900">Hotel Reservations</h2>
-              <p class="text-gray-700 mt-2">Reserve luxury hotels, budget accommodations, and everything in between at the best rates.</p>
+    <main>
+        <!-- Hero Section -->
+        <section class="relative bg-slate-900 text-white overflow-hidden">
+            <div class="absolute inset-0 opacity-30">
+                <img
+                    src="/images/hotel-luxury.jpg"
+                    alt="Luxury hotel room"
+                    class="w-full h-full object-cover"
+                />
             </div>
-            <span class="bg-blue-600 text-white px-4 py-2 rounded-full font-semibold">Save 15%</span>
-          </div>
-        </div>
-      </div>
-    </section>
+            <div class="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/80 to-slate-900/40"></div>
 
-    <!-- Booking Form -->
-    <section class="py-12 px-4 bg-gray-50">
-      <div class="max-w-7xl mx-auto">
-        <BookingForm serviceType="hotel" />
-      </div>
-    </section>
+            <div class="relative z-10 max-w-container mx-auto px-4 py-section-lg text-center">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4 text-white">
+                    Find Your Perfect Hotel
+                </h1>
+                <p class="text-xl text-slate-200 mb-4">
+                    Get up to 15% discount on premium accommodations
+                </p>
+                <div class="inline-block bg-accent-500/10 border border-accent-500/30 rounded-lg px-4 py-2">
+                    <span class="text-accent-400 font-semibold">
+                        ✓ 50,000+ verified properties
+                    </span>
+                </div>
+            </div>
+        </section>
 
-    <!-- Benefits Section -->
-    <section class="py-12 px-4 bg-white">
-      <div class="max-w-7xl mx-auto">
-        <h2 class="text-3xl font-bold text-blue-900 mb-8 text-center">Why Choose Our Hotels?</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div class="bg-blue-50 p-6 rounded-lg">
-            <div class="text-3xl mb-3">🏨</div>
-            <h3 class="text-xl font-bold text-blue-900 mb-2">Wide Selection</h3>
-            <p class="text-gray-700">Choose from millions of hotels worldwide, from luxury resorts to budget-friendly stays.</p>
-          </div>
-          <div class="bg-blue-50 p-6 rounded-lg">
-            <div class="text-3xl mb-3">💰</div>
-            <h3 class="text-xl font-bold text-blue-900 mb-2">Best Rates</h3>
-            <p class="text-gray-700">Compare prices from all major hotel chains and booking platforms to get the best deal.</p>
-          </div>
-          <div class="bg-blue-50 p-6 rounded-lg">
-            <div class="text-3xl mb-3">🔒</div>
-            <h3 class="text-xl font-bold text-blue-900 mb-2">Secure Booking</h3>
-            <p class="text-gray-700">Your booking is secure and confirmed directly with the hotel.</p>
-          </div>
-        </div>
-      </div>
-    </section>
+        <!-- Main Booking Form -->
+        <section class="py-section-lg px-4 bg-white">
+            <BookingForm serviceType="hotel" />
+        </section>
 
-    <!-- Hotel Categories -->
-    <section class="py-12 px-4 bg-gray-50">
-      <div class="max-w-4xl mx-auto">
-        <h2 class="text-3xl font-bold text-blue-900 mb-8 text-center">Hotel Categories</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-blue-600">
-            <h3 class="text-xl font-bold text-blue-900 mb-2">⭐ Luxury Hotels</h3>
-            <p class="text-gray-700">Experience premium accommodations with world-class amenities and services.</p>
-          </div>
-          <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-blue-600">
-            <h3 class="text-xl font-bold text-blue-900 mb-2">⭐⭐ Mid-Range Hotels</h3>
-            <p class="text-gray-700">Comfortable and convenient stays with good amenities at reasonable prices.</p>
-          </div>
-          <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-blue-600">
-            <h3 class="text-xl font-bold text-blue-900 mb-2">⭐⭐⭐ Budget Hotels</h3>
-            <p class="text-gray-700">Affordable and clean accommodations perfect for budget-conscious travelers.</p>
-          </div>
-          <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-blue-600">
-            <h3 class="text-xl font-bold text-blue-900 mb-2">🏡 Vacation Rentals</h3>
-            <p class="text-gray-700">Unique accommodations including apartments, villas, and country homes.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
+        <!-- Hotel Categories -->
+        <section class="py-section-lg px-4 bg-slate-50">
+            <div class="max-w-container mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-12 text-center">
+                    Hotel Categories
+                </h2>
 
-  <Footer />
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="bg-white border border-slate-200 rounded-xl overflow-hidden hover:shadow-md transition">
+                        <div class="h-32 bg-gradient-to-br from-purple-600 to-purple-700 flex items-center justify-center text-4xl">
+                            👑
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-lg font-bold text-slate-900 mb-2">
+                                Luxury
+                            </h3>
+                            <p class="text-slate-600 text-sm mb-4">
+                                5-star resorts and exclusive properties
+                            </p>
+                            <p class="text-accent-600 font-semibold">
+                                From $200/night
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white border border-slate-200 rounded-xl overflow-hidden hover:shadow-md transition">
+                        <div class="h-32 bg-gradient-to-br from-blue-600 to-blue-700 flex items-center justify-center text-4xl">
+                            ⭐
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-lg font-bold text-slate-900 mb-2">
+                                Premium
+                            </h3>
+                            <p class="text-slate-600 text-sm mb-4">
+                                4-star hotels with great amenities
+                            </p>
+                            <p class="text-accent-600 font-semibold">
+                                From $120/night
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white border border-slate-200 rounded-xl overflow-hidden hover:shadow-md transition">
+                        <div class="h-32 bg-gradient-to-br from-green-600 to-green-700 flex items-center justify-center text-4xl">
+                            🏨
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-lg font-bold text-slate-900 mb-2">
+                                Mid-Range
+                            </h3>
+                            <p class="text-slate-600 text-sm mb-4">
+                                3-star hotels with quality service
+                            </p>
+                            <p class="text-accent-600 font-semibold">
+                                From $70/night
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white border border-slate-200 rounded-xl overflow-hidden hover:shadow-md transition">
+                        <div class="h-32 bg-gradient-to-br from-orange-600 to-orange-700 flex items-center justify-center text-4xl">
+                            💰
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-lg font-bold text-slate-900 mb-2">
+                                Budget
+                            </h3>
+                            <p class="text-slate-600 text-sm mb-4">
+                                Affordable stays with clean rooms
+                            </p>
+                            <p class="text-accent-600 font-semibold">
+                                From $30/night
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Book With Us -->
+        <section class="py-section-lg px-4 bg-white">
+            <div class="max-w-container mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-12 text-center">
+                    Why Choose Our Hotels?
+                </h2>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-slate-50 border border-slate-200 rounded-xl p-8 hover:shadow-md transition">
+                        <div class="text-4xl mb-4">🔍</div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">
+                            Best Selection
+                        </h3>
+                        <p class="text-slate-600">
+                            Access over 50,000 verified hotels worldwide at
+                            exclusive rates
+                        </p>
+                    </div>
+
+                    <div class="bg-slate-50 border border-slate-200 rounded-xl p-8 hover:shadow-md transition">
+                        <div class="text-4xl mb-4">💳</div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">
+                            Flexible Payment
+                        </h3>
+                        <p class="text-slate-600">
+                            Multiple payment options and installment plans
+                            available
+                        </p>
+                    </div>
+
+                    <div class="bg-slate-50 border border-slate-200 rounded-xl p-8 hover:shadow-md transition">
+                        <div class="text-4xl mb-4">⏱️</div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">
+                            Instant Booking
+                        </h3>
+                        <p class="text-slate-600">
+                            Confirm your reservation in seconds with instant
+                            confirmation
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="py-section-lg px-4 bg-slate-900 text-white">
+            <div class="max-w-container mx-auto text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                    Ready to Book Your Hotel?
+                </h2>
+                <p class="text-lg text-slate-200 mb-8">
+                    Compare 50,000+ hotels and save up to 15%
+                </p>
+                <a
+                    href="#hotel-form"
+                    class="inline-block bg-accent-600 hover:bg-accent-700 text-white font-semibold px-8 py-3 rounded-lg transition"
+                >
+                    Search Hotels Now
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <Footer />
 </Layout>

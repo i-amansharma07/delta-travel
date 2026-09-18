@@ -1,0 +1,28 @@
+# Delta Air Travel - robots.txt
+# Allows search engines to crawl and index the site
+
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /*.json$
+Disallow: /*.json/
+
+# Specific crawl delay for Googlebot to reduce server load
+User-agent: Googlebot
+Crawl-delay: 1
+
+# Bing specific rules
+User-agent: Bingbot
+Crawl-delay: 1
+
+# Avoid crawling admin or private areas (if you add them later)
+Disallow: /admin/
+Disallow: /private/
+Disallow: /.env
+Disallow: /config/
+
+# Sitemap location
+Sitemap: https://deltaairtravel.com/sitemap.xml
+
+# Cache: How long before rechecking robots.txt
+# Cache-control: max-age=86400

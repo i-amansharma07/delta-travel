@@ -1,0 +1,468 @@
+<title>Animation Showcase</title>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  :root {
+    --primary: #1e3a8a;
+    --accent: #0d9488;
+    --accent-light: #14b8a6;
+    --surface: #f8fafc;
+    --text: #0f172a;
+    --text-light: #64748b;
+    --border: #e2e8f0;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --primary: #3b82f6;
+      --accent: #14b8a6;
+      --accent-light: #2dd4bf;
+      --surface: #0f172a;
+      --text: #f1f5f9;
+      --text-light: #94a3b8;
+      --border: #334155;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --primary: #3b82f6;
+    --accent: #14b8a6;
+    --accent-light: #2dd4bf;
+    --surface: #0f172a;
+    --text: #f1f5f9;
+    --text-light: #94a3b8;
+    --border: #334155;
+  }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: var(--surface);
+    color: var(--text);
+    line-height: 1.6;
+    padding: 2rem;
+  }
+
+  .container {
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+
+  header {
+    margin-bottom: 4rem;
+    animation: slideInDown 0.6s ease-out;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--text);
+  }
+
+  .subtitle {
+    font-size: 1.125rem;
+    color: var(--text-light);
+    margin-bottom: 1.5rem;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+  }
+
+  .demo-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 2rem;
+    animation: slideInUp 0.6s ease-out both;
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .demo-card:nth-child(1) { animation-delay: 0.1s; }
+  .demo-card:nth-child(2) { animation-delay: 0.2s; }
+  .demo-card:nth-child(3) { animation-delay: 0.3s; }
+  .demo-card:nth-child(4) { animation-delay: 0.4s; }
+  .demo-card:nth-child(5) { animation-delay: 0.5s; }
+  .demo-card:nth-child(6) { animation-delay: 0.6s; }
+
+  .demo-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    border-color: var(--accent);
+  }
+
+  .demo-card h3 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--primary);
+  }
+
+  .demo-box {
+    background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
+    color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    margin: 1rem 0;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Animation classes */
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes slideInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slideInDown {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slideInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slideInRight {
+    from {
+      opacity: 0;
+      transform: translateX(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes scaleIn {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.8; }
+  }
+
+  @keyframes bounceSoft {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
+
+  @keyframes glow {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(20, 184, 166, 0.7); }
+    50% { box-shadow: 0 0 0 10px rgba(20, 184, 166, 0); }
+  }
+
+  .animate-fade { animation: fadeIn 1s ease-out; }
+  .animate-slide-up { animation: slideInUp 0.8s ease-out; }
+  .animate-slide-down { animation: slideInDown 0.8s ease-out; }
+  .animate-slide-left { animation: slideInLeft 0.8s ease-out; }
+  .animate-slide-right { animation: slideInRight 0.8s ease-out; }
+  .animate-scale { animation: scaleIn 0.6s ease-out; }
+  .animate-float { animation: float 3s ease-in-out infinite; }
+  .animate-pulse { animation: pulse 2s ease-in-out infinite; }
+  .animate-bounce { animation: bounceSoft 2s ease-in-out infinite; }
+  .animate-glow { animation: glow 2s ease-in-out infinite; }
+
+  .demo-description {
+    font-size: 0.875rem;
+    color: var(--text-light);
+    margin-top: 1rem;
+  }
+
+  button {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    font-size: 0.875rem;
+    margin-top: 1rem;
+  }
+
+  button:hover {
+    background: var(--accent);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  }
+
+  button:active {
+    transform: translateY(0);
+  }
+
+  button:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+
+  .interactive-demo {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .interactive-demo h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: var(--text);
+    animation: fadeIn 0.8s ease-out 0.3s both;
+  }
+
+  .interactive-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .interactive-item {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .interactive-item:hover {
+    background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
+    color: white;
+    border-color: var(--accent);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(13, 148, 136, 0.2);
+  }
+
+  .interactive-item span {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 0.5rem;
+    transition: transform 0.3s ease-out;
+  }
+
+  .interactive-item:hover span {
+    transform: scale(1.2) rotate(5deg);
+  }
+
+  .badge {
+    display: inline-block;
+    background: var(--accent);
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin-top: 1rem;
+    animation: scaleIn 0.5s ease-out;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .badge:hover {
+    transform: scale(1.05);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+</style>
+
+<div class="container">
+  <header>
+    <h1>🎨 Animation Showcase</h1>
+    <p class="subtitle">Experience smooth, pleasing animations throughout your app</p>
+    <p style="color: var(--text-light); font-size: 0.9rem;">Hover over cards and buttons to see animations in action</p>
+  </header>
+
+  <div class="grid">
+    <div class="demo-card">
+      <h3>Fade In</h3>
+      <div class="demo-box animate-fade">
+        Fading In
+      </div>
+      <p class="demo-description">Smooth opacity transition for page load and content reveal</p>
+      <span class="badge">0.6s ease-out</span>
+    </div>
+
+    <div class="demo-card">
+      <h3>Slide Up</h3>
+      <div class="demo-box animate-slide-up">
+        Sliding Up
+      </div>
+      <p class="demo-description">Elegant upward motion with fade for element entrance</p>
+      <span class="badge">0.8s ease-out</span>
+    </div>
+
+    <div class="demo-card">
+      <h3>Slide Down</h3>
+      <div class="demo-box animate-slide-down">
+        Sliding Down
+      </div>
+      <p class="demo-description">Downward motion perfect for header and badge animations</p>
+      <span class="badge">0.8s ease-out</span>
+    </div>
+
+    <div class="demo-card">
+      <h3>Slide Left</h3>
+      <div class="demo-box animate-slide-left">
+        Sliding Left
+      </div>
+      <p class="demo-description">Horizontal motion from right to left for smooth entrance</p>
+      <span class="badge">0.8s ease-out</span>
+    </div>
+
+    <div class="demo-card">
+      <h3>Slide Right</h3>
+      <div class="demo-box animate-slide-right">
+        Sliding Right
+      </div>
+      <p class="demo-description">Horizontal motion from left to right for balanced flow</p>
+      <span class="badge">0.8s ease-out</span>
+    </div>
+
+    <div class="demo-card">
+      <h3>Scale In</h3>
+      <div class="demo-box animate-scale">
+        Scaling In
+      </div>
+      <p class="demo-description">Subtle grow effect with fade for modal and card pop-in</p>
+      <span class="badge">0.6s ease-out</span>
+    </div>
+
+    <div class="demo-card">
+      <h3>Float</h3>
+      <div class="demo-box animate-float">
+        ✨ Floating
+      </div>
+      <p class="demo-description">Continuous gentle vertical motion for hover states</p>
+      <span class="badge">3s infinite</span>
+    </div>
+
+    <div class="demo-card">
+      <h3>Pulse</h3>
+      <div class="demo-box animate-pulse">
+        📡 Pulsing
+      </div>
+      <p class="demo-description">Soft opacity pulse for attention without distraction</p>
+      <span class="badge">2s infinite</span>
+    </div>
+
+    <div class="demo-card">
+      <h3>Bounce Soft</h3>
+      <div class="demo-box animate-bounce">
+        ⬆️ Bouncing
+      </div>
+      <p class="demo-description">Subtle bouncing effect for trust signals and badges</p>
+      <span class="badge">2s infinite</span>
+    </div>
+
+    <div class="demo-card">
+      <h3>Glow</h3>
+      <div class="demo-box animate-glow">
+        ✨ Glowing
+      </div>
+      <p class="demo-description">Expanding shadow glow for emphasis and attention</p>
+      <span class="badge">2s infinite</span>
+    </div>
+
+    <div class="demo-card">
+      <h3>Hover Lift</h3>
+      <div class="demo-box" style="animation: none; cursor: pointer; transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);" onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 20px 40px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+        Hover Me ↑
+      </div>
+      <p class="demo-description">Interactive lift effect on hover for depth perception</p>
+      <span class="badge">0.35s smooth</span>
+    </div>
+
+    <div class="demo-card">
+      <h3>Button Click</h3>
+      <button>Click Me →</button>
+      <p class="demo-description">Press interactions with visual feedback and smooth transitions</p>
+      <span class="badge">0.35s active</span>
+    </div>
+  </div>
+
+  <div class="interactive-demo">
+    <h2>Interactive Elements</h2>
+    <div class="interactive-grid">
+      <div class="interactive-item">
+        <span>✈️</span>
+        <div>Flight Booking</div>
+      </div>
+      <div class="interactive-item">
+        <span>🏨</span>
+        <div>Hotel Search</div>
+      </div>
+      <div class="interactive-item">
+        <span>🚢</span>
+        <div>Cruise Packages</div>
+      </div>
+      <div class="interactive-item">
+        <span>💰</span>
+        <div>Best Prices</div>
+      </div>
+      <div class="interactive-item">
+        <span>⭐</span>
+        <div>Reviews</div>
+      </div>
+      <div class="interactive-item">
+        <span>🔒</span>
+        <div>Secure Booking</div>
+      </div>
+    </div>
+  </div>
+</div>
