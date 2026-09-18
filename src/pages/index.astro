@@ -1,0 +1,92 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Hero from '../components/Hero.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+import BookingForm from '../components/BookingForm.astro';
+import ServiceFeatures from '../components/ServiceFeatures.astro';
+import Testimonials from '../components/Testimonials.astro';
+import { services } from '../data/services';
+---
+
+<Layout title="Delta Air Travel - Book Flights, Hotels & Cruises">
+  <Header />
+
+  <main>
+    {/* Hero Section */}
+    <Hero />
+
+    {/* Flight Booking Section */}
+    <section id="flights" class="py-12 px-4 bg-white">
+      <div class="max-w-7xl mx-auto">
+        <div class="mb-8">
+          <ServiceCard
+            id="flight"
+            title="Flight Booking"
+            discount="20%"
+            description="Get Up to 20% Off on Flight Booking"
+            phoneNumber="+18555465052"
+          />
+        </div>
+        <BookingForm serviceType="flight" />
+      </div>
+    </section>
+
+    {/* Hotel Booking Section */}
+    <section id="hotels" class="py-12 px-4 bg-gray-50">
+      <div class="max-w-7xl mx-auto">
+        <div class="mb-8">
+          <ServiceCard
+            id="hotel"
+            title="Hotel Booking"
+            discount="15%"
+            description="Get Up to 15% Off on Hotel Booking"
+            phoneNumber="+18555465052"
+          />
+        </div>
+        <BookingForm serviceType="hotel" />
+      </div>
+    </section>
+
+    {/* Cruise Booking Section */}
+    <section id="cruises" class="py-12 px-4 bg-white">
+      <div class="max-w-7xl mx-auto">
+        <div class="mb-8">
+          <ServiceCard
+            id="cruise"
+            title="Cruise Packages"
+            discount="25%"
+            description="Get Up to 25% Off on Cruise Packages"
+            phoneNumber="+18555465052"
+          />
+        </div>
+        <BookingForm serviceType="cruise" />
+      </div>
+    </section>
+
+    {/* Cancellation Support Section */}
+    <section id="cancellation" class="py-12 px-4 bg-gray-50">
+      <div class="max-w-7xl mx-auto">
+        <div class="mb-8">
+          <ServiceCard
+            id="cancellation"
+            title="Cancellation Support"
+            discount="Support"
+            description="Flight & Hotel Cancellation Support"
+            phoneNumber="+18555465052"
+          />
+        </div>
+        <BookingForm serviceType="cancellation" />
+      </div>
+    </section>
+
+    {/* Service Features Section */}
+    <ServiceFeatures />
+
+    {/* Testimonials Section */}
+    <Testimonials />
+  </main>
+
+  <Footer />
+</Layout>

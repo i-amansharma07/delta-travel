@@ -1,0 +1,29 @@
+---
+interface Props {
+  id: string;
+  title: string;
+  discount: string;
+  description: string;
+  phoneNumber: string;
+}
+
+const { id, title, discount, description, phoneNumber } = Astro.props;
+---
+
+<div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow">
+  <div class="flex justify-between items-start mb-4">
+    <h3 class="text-xl font-bold text-blue-900">{title}</h3>
+    <span class="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
+      {discount} Off
+    </span>
+  </div>
+
+  <p class="text-gray-700 mb-6">{description}</p>
+
+  <a
+    href={`tel:${phoneNumber}`}
+    class="inline-block bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors font-medium"
+  >
+    Call Now: {phoneNumber}
+  </a>
+</div>

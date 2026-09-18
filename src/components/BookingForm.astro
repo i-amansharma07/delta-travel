@@ -1,0 +1,271 @@
+---
+interface Props {
+  serviceType: 'flight' | 'hotel' | 'cruise' | 'cancellation';
+}
+
+const { serviceType } = Astro.props;
+
+const formLabels = {
+  flight: 'Flight Booking Form',
+  hotel: 'Hotel Booking Form',
+  cruise: 'Cruise Booking Form',
+  cancellation: 'Cancellation Support Form',
+};
+---
+
+<form class="booking-form bg-white p-6 rounded-lg shadow-md border border-gray-200 mb-8" data-service-type={serviceType}>
+  <h3 class="text-2xl font-bold text-blue-900 mb-6">{formLabels[serviceType]}</h3>
+
+  <!-- Error Messages -->
+  <div class="form-errors mb-4 hidden">
+    <div class="bg-red-50 border border-red-200 rounded-lg p-4">
+      <p class="text-red-800 font-semibold mb-2">Please fix the following errors:</p>
+      <ul class="errors-list text-red-700 space-y-1 list-disc list-inside"></ul>
+    </div>
+  </div>
+
+  <!-- Success Message -->
+  <div class="form-success mb-4 hidden">
+    <div class="bg-green-50 border border-green-200 rounded-lg p-4">
+      <p class="text-green-800 font-semibold">✓ Booking submitted successfully!</p>
+      <p class="text-green-700 text-sm mt-2">Check your email for confirmation details.</p>
+    </div>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+    <div>
+      <label class="block text-gray-700 font-medium mb-2">Trip Type <span class="text-red-500">*</span></label>
+      <select
+        name="tripType"
+        class="form-input w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+        required
+      >
+        <option value="">-- Select Trip Type --</option>
+        <option value="One Way">One Way</option>
+        <option value="Round Trip">Round Trip</option>
+        <option value="Multi-City">Multi-City</option>
+      </select>
+      <span class="error-message text-red-500 text-sm hidden"></span>
+    </div>
+
+    <div>
+      <label class="block text-gray-700 font-medium mb-2">From <span class="text-red-500">*</span></label>
+      <input
+        type="text"
+        name="from"
+        placeholder="Departure City"
+        class="form-input w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+        required
+      />
+      <span class="error-message text-red-500 text-sm hidden"></span>
+    </div>
+
+    <div>
+      <label class="block text-gray-700 font-medium mb-2">To <span class="text-red-500">*</span></label>
+      <input
+        type="text"
+        name="to"
+        placeholder="Destination City"
+        class="form-input w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+        required
+      />
+      <span class="error-message text-red-500 text-sm hidden"></span>
+    </div>
+
+    <div>
+      <label class="block text-gray-700 font-medium mb-2">Departure Date <span class="text-red-500">*</span></label>
+      <input
+        type="date"
+        name="departureDate"
+        class="form-input w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+        required
+      />
+      <span class="error-message text-red-500 text-sm hidden"></span>
+    </div>
+
+    <div>
+      <label class="block text-gray-700 font-medium mb-2">Return Date</label>
+      <input
+        type="date"
+        name="returnDate"
+        class="form-input w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+      />
+      <span class="error-message text-red-500 text-sm hidden"></span>
+    </div>
+
+    <div>
+      <label class="block text-gray-700 font-medium mb-2">Passengers <span class="text-red-500">*</span></label>
+      <select
+        name="passengers"
+        class="form-input w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+        required
+      >
+        <option value="">-- Select Passengers --</option>
+        <option value="1">1 Passenger</option>
+        <option value="2">2 Passengers</option>
+        <option value="3">3 Passengers</option>
+        <option value="4">4 Passengers</option>
+        <option value="5">5 Passengers</option>
+        <option value="6">6 Passengers</option>
+        <option value="7">7 Passengers</option>
+        <option value="8">8 Passengers</option>
+        <option value="9">9 Passengers</option>
+        <option value="10">10 Passengers</option>
+      </select>
+      <span class="error-message text-red-500 text-sm hidden"></span>
+    </div>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+    <div>
+      <label class="block text-gray-700 font-medium mb-2">Name <span class="text-red-500">*</span></label>
+      <input
+        type="text"
+        name="name"
+        placeholder="Your Name"
+        class="form-input w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+        required
+      />
+      <span class="error-message text-red-500 text-sm hidden"></span>
+    </div>
+
+    <div>
+      <label class="block text-gray-700 font-medium mb-2">WhatsApp <span class="text-red-500">*</span></label>
+      <input
+        type="tel"
+        name="whatsapp"
+        placeholder="WhatsApp Number"
+        class="form-input w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+        required
+      />
+      <span class="error-message text-red-500 text-sm hidden"></span>
+    </div>
+
+    <div>
+      <label class="block text-gray-700 font-medium mb-2">Email <span class="text-red-500">*</span></label>
+      <input
+        type="email"
+        name="email"
+        placeholder="your-email@example.com"
+        class="form-input w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+        required
+      />
+      <span class="error-message text-red-500 text-sm hidden"></span>
+    </div>
+  </div>
+
+  <button
+    type="submit"
+    class="submit-btn w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition-colors font-bold text-lg disabled:bg-gray-400 disabled:cursor-not-allowed"
+  >
+    Get Best Deal
+  </button>
+</form>
+
+<script>
+  // Form validation and submission handler
+  document.addEventListener('DOMContentLoaded', () => {
+    const forms = document.querySelectorAll('.booking-form');
+
+    forms.forEach((form) => {
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        // Clear previous messages
+        const errorDiv = form.querySelector('.form-errors');
+        const successDiv = form.querySelector('.form-success');
+        const errorsList = form.querySelector('.errors-list');
+
+        errorDiv?.classList.add('hidden');
+        successDiv?.classList.add('hidden');
+
+        // Validate form
+        const formData = new FormData(form);
+        const errors: string[] = [];
+
+        const name = formData.get('name') as string;
+        const email = formData.get('email') as string;
+        const whatsapp = formData.get('whatsapp') as string;
+        const from = formData.get('from') as string;
+        const to = formData.get('to') as string;
+        const departureDate = formData.get('departureDate') as string;
+        const passengers = formData.get('passengers') as string;
+
+        if (!name?.trim()) errors.push('Name is required');
+        if (!email?.trim()) errors.push('Email is required');
+        if (!whatsapp?.trim()) errors.push('WhatsApp number is required');
+        if (!from?.trim()) errors.push('Departure city is required');
+        if (!to?.trim()) errors.push('Destination city is required');
+        if (!departureDate) errors.push('Departure date is required');
+        if (!passengers) errors.push('Passenger count is required');
+
+        // Email validation
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (email && !emailRegex.test(email)) {
+          errors.push('Please enter a valid email address');
+        }
+
+        // Phone validation (basic - at least 10 digits)
+        const phoneRegex = /^\+?[\d\s\-\(\)]{10,}$/;
+        if (whatsapp && !phoneRegex.test(whatsapp)) {
+          errors.push('Please enter a valid phone number (at least 10 digits)');
+        }
+
+        if (errors.length > 0) {
+          errorsList!.innerHTML = errors.map((err) => `<li>${err}</li>`).join('');
+          errorDiv?.classList.remove('hidden');
+          return;
+        }
+
+        // Submit form
+        const submitBtn = form.querySelector('.submit-btn') as HTMLButtonElement;
+        const originalText = submitBtn.textContent;
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Submitting...';
+
+        try {
+          const response = await fetch('/api/submit-booking', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              serviceType: form.dataset.serviceType,
+              tripType: formData.get('tripType'),
+              from,
+              to,
+              departureDate,
+              returnDate: formData.get('returnDate') || '',
+              passengers,
+              name,
+              whatsapp,
+              email,
+            }),
+          });
+
+          const result = await response.json();
+
+          if (result.success) {
+            // Show success message
+            successDiv?.classList.remove('hidden');
+            // Reset form
+            form.reset();
+            // Scroll to success message
+            successDiv?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          } else {
+            // Show errors
+            errorsList!.innerHTML = (result.errors || ['An error occurred']).map((err: string) => `<li>${err}</li>`).join('');
+            errorDiv?.classList.remove('hidden');
+          }
+        } catch (error) {
+          errorsList!.innerHTML = '<li>An error occurred while submitting your booking. Please try again.</li>';
+          errorDiv?.classList.remove('hidden');
+          console.error('Booking submission error:', error);
+        } finally {
+          submitBtn.disabled = false;
+          submitBtn.textContent = originalText;
+        }
+      });
+    });
+  });
+</script>
