@@ -1,4 +1,5 @@
 ---
+import { headerConstants } from '../constants/header_constants';
 ---
 
 <header class="sticky top-0 z-50 bg-white border-b border-slate-200 shadow-xs">
@@ -6,12 +7,12 @@
   <div class="bg-slate-900 text-white px-4 py-2.5">
     <div class="max-w-container mx-auto flex justify-between items-center text-sm">
       <div class="flex gap-6 text-slate-100">
-        <span class="hidden sm:inline">✓ 15+ Years of Trust</span>
-        <span class="hidden md:inline">✓ 24/7 Support Available</span>
+        <span class="hidden sm:inline">{headerConstants.topBar.trustText}</span>
+        <span class="hidden md:inline">{headerConstants.topBar.supportText}</span>
       </div>
       <div class="flex items-center gap-4">
         <a href="tel:+18555465052" class="font-medium hover:text-accent-500 transition">
-          📞 +1 (855) 546-5052
+          📞 {headerConstants.topBar.phone}
         </a>
         <!-- Social Icons -->
         <div class="flex gap-2 pl-4 border-l border-slate-700">

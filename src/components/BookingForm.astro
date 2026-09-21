@@ -1,34 +1,12 @@
 ---
+import { bookingFormConstants } from '../constants/booking_form_constants';
+
 interface Props {
   serviceType: 'flight' | 'hotel' | 'cruise' | 'cancellation';
 }
 
 const { serviceType } = Astro.props;
-
-const formConfig = {
-  flight: {
-    title: 'Flight Booking',
-    description: 'Find and book flights at the best prices',
-    icon: '✈️',
-  },
-  hotel: {
-    title: 'Hotel Booking',
-    description: 'Discover premium accommodations worldwide',
-    icon: '🏨',
-  },
-  cruise: {
-    title: 'Cruise Packages',
-    description: 'Book luxury cruise vacations',
-    icon: '🚢',
-  },
-  cancellation: {
-    title: 'Cancellation Support',
-    description: 'Get help with flight and hotel cancellations',
-    icon: '💬',
-  },
-};
-
-const config = formConfig[serviceType];
+const config = bookingFormConstants.formConfig[serviceType];
 ---
 
 <section id={`${serviceType}-form`} class="py-section-lg px-4">
