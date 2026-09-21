@@ -132,7 +132,7 @@ export const homePageConstants = {
     buttons: {
       getQuote: 'Get Your Quote Now',
       getQuoteHref: '#flight-form',
-      callUs: 'Call Us: +1 (855) 546-5052',
+      callUs: 'Call Us: +1 800 258 1388',
       callUsHref: 'tel:+18555465052',
     },
   },

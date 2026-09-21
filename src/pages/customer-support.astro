@@ -52,10 +52,10 @@ import BookingForm from "../components/BookingForm.astro";
                             Call us anytime, day or night
                         </p>
                         <a
-                            href="tel:+18555465052"
+                            href={`tel:${'+1 800 258 1388'.replace(/\s/g, '')}`}
                             class="text-accent-600 font-semibold hover:text-accent-700"
                         >
-                            +1 (855) 546-5052
+                            +1 800 258 1388
                         </a>
                     </div>
 
@@ -185,7 +185,7 @@ import BookingForm from "../components/BookingForm.astro";
                     Our team is available 24/7 to assist you
                 </p>
                 <a
-                    href="tel:+18555465052"
+                    href={`tel:${'+1 800 258 1388'.replace(/\s/g, '')}`}
                     class="inline-block bg-accent-600 hover:bg-accent-700 text-white font-semibold px-8 py-3 rounded-lg transition"
                 >
                     Call Us Now

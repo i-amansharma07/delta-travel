@@ -1,3 +1,5 @@
+import { CANCELLATION_PHONE_NUMBER } from "./cancellation_constants";
+
 export const aboutUsConstants = {
   hero: {
     title: 'About Delta Air Travel',
@@ -87,7 +89,7 @@ export const aboutUsConstants = {
       {
         question: 'Do you handle cancellations?',
         answer:
-          'Yes! We specialize in helping customers with flight and hotel cancellations. Call us for assistance.',
+          `Yes! We specialize in helping customers with flight and hotel cancellations. Call us for assistance at ${CANCELLATION_PHONE_NUMBER}`,
       },
       {
         question: 'What payment methods do you accept?',

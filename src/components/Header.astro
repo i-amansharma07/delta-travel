@@ -11,7 +11,7 @@ import { headerConstants } from '../constants/header_constants';
         <span class="hidden md:inline">{headerConstants.topBar.supportText}</span>
       </div>
       <div class="flex items-center gap-4">
-        <a href="tel:+18555465052" class="font-medium hover:text-accent-500 transition">
+        <a href={`tel:${headerConstants.topBar.phone.replace(/\s/g, '')}`} class="font-medium hover:text-accent-500 transition">
           📞 {headerConstants.topBar.phone}
         </a>
         <!-- Social Icons -->
@@ -57,11 +57,11 @@ import { headerConstants } from '../constants/header_constants';
   <!-- Main navigation bar -->
   <nav class="bg-white px-4 py-4">
     <div class="max-w-container mx-auto flex justify-between items-center">
-      <a href="/" class="flex items-center gap-2 hover:opacity-80 transition">
-        <div class="text-2xl font-bold text-slate-900">✈️</div>
+      <a href="/" class="flex items-center gap-3 hover:opacity-90 transition">
+        <img src="/favicon-256.png" alt="Delta Air Travel Logo" class="w-10 h-10 rounded-lg shadow-sm border border-slate-100" />
         <div>
-          <div class="text-lg font-bold text-slate-900">Delta Air Travel</div>
-          <div class="text-xs text-slate-500">Your Trusted Travel Partner</div>
+          <div class="text-lg font-bold text-slate-900 leading-tight">Delta Air Travel</div>
+          <div class="text-xs text-slate-500 font-medium">Your Trusted Travel Partner</div>
         </div>
       </a>
 
@@ -102,7 +102,7 @@ import { headerConstants } from '../constants/header_constants';
         </li>
       </ul>
 
-      <a href="tel:+18555465052" class="hidden md:inline-block bg-accent-600 text-white px-5 py-2 rounded-lg hover:bg-accent-700 transition font-medium text-sm">
+      <a href={`tel:${headerConstants.topBar.phone.replace(/\s/g, '')}`} class="hidden md:inline-block bg-accent-600 text-white px-5 py-2 rounded-lg hover:bg-accent-700 transition font-medium text-sm">
         Get Quote
       </a>
 
@@ -138,7 +138,7 @@ import { headerConstants } from '../constants/header_constants';
           <a href="/contact-us" class="block py-3 hover:text-accent-600 transition font-medium">Contact Us</a>
         </li>
         <li class="border-t border-slate-200 pt-3 mt-3">
-          <a href="tel:+18555465052" class="block bg-accent-600 text-white px-4 py-3 rounded-lg hover:bg-accent-700 transition font-medium text-center">
+          <a href={`tel:${'+1 800 258 1388'.replace(/\s/g, '')}`} class="block bg-accent-600 text-white px-4 py-3 rounded-lg hover:bg-accent-700 transition font-medium text-center">
             Get Quote
           </a>
         </li>

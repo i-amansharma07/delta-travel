@@ -25,7 +25,7 @@ export const footerConstants = {
     title: 'Contact & Support',
     phone: {
       icon: '📞',
-      number: '+1 (855) 546-5052',
+      number: '+1 800 258 1388',
       href: 'tel:+18555465052',
     },
     email: {

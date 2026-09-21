@@ -196,7 +196,7 @@ Sitemap: https://yoursite.com/sitemap.xml
 **Fix:** Create `src/config.ts`:
 ```typescript
 export const SITE_CONFIG = {
-  phone: '+1 (855) 546-5052',
+  phone: '+1 800 258 1388',
   email: 'support@deltaairtravel.com',
   companyName: 'Delta Air Travel',
   yearsInBusiness: 15,

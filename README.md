@@ -233,9 +233,9 @@ delta-1/
 ## 📞 Contact Information
 
 All contact methods are in footers and contact page:
-- **Phone:** +1 (855) 546-5052
+- **Phone:** +1 800 258 1388
 - **Email:** info@deltaairtravel.com
-- **WhatsApp:** +1 (855) 546-5052
+- **WhatsApp:** +1 800 258 1388
 
 ## 💾 Files Created This Phase
 

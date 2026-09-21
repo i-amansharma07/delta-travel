@@ -227,8 +227,8 @@ const config = bookingFormConstants.formConfig[serviceType];
 
           <div class="mt-8 pt-6 border-t border-slate-200">
             <p class="text-xs text-slate-600 mb-3">Questions? Call us anytime</p>
-            <a href="tel:+18555465052" class="text-accent-600 font-semibold hover:text-accent-700">
-              +1 (855) 546-5052
+            <a href={`tel:${'+1 800 258 1388'.replace(/\s/g, '')}`} class="text-accent-600 font-semibold hover:text-accent-700">
+              +1 800 258 1388
             </a>
           </div>
         </div>
@@ -323,7 +323,7 @@ const config = bookingFormConstants.formConfig[serviceType];
             errorDiv?.classList.remove('hidden');
           }
         } catch (error) {
-          errorsList!.innerHTML = '<li>An error occurred. Please try again or call us at +1 (855) 546-5052</li>';
+          errorsList!.innerHTML = `<li>An error occurred. Please try again or call us at <a href="tel:${'+1 800 258 1388'.replace(/\s/g, '')}" class="text-accent-600 font-semibold hover:text-accent-700">${'+1 800 258 1388'.replace(/\s/g, '')}</a></li>`;
           errorDiv?.classList.remove('hidden');
           console.error('Booking submission error:', error);
         } finally {

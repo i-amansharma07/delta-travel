@@ -115,7 +115,7 @@ export const bookingFormConstants = {
   },
   questionSection: {
     text: 'Questions? Call us anytime',
-    phone: '+1 (855) 546-5052',
+    phone: '+1 800 258 1388',
     href: 'tel:+18555465052',
   },
   validationErrors: {
@@ -130,5 +130,5 @@ export const bookingFormConstants = {
     invalidPhone: 'Please enter a valid phone number',
   },
   errorOnSubmit:
-    'An error occurred. Please try again or call us at +1 (855) 546-5052',
+    'An error occurred. Please try again or call us at +1 800 258 1388',
 };

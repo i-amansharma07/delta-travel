@@ -1,0 +1,1 @@
+export const CANCELLATION_PHONE_NUMBER = '+1 888 738 0967';
